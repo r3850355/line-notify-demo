@@ -10,14 +10,31 @@
 
 <div class="ui main text container">
   <h1 class="ui header">Step 2. 綁定 Line Notify</h1>
-  <p>請點選下方按鈕綁定</p>
-  <button class="ui button" onClick="window.location='{{ url("auth/notify_redirect") }}'">點我綁定</button>
+  <p>若尚未綁定，請點選下方按鈕綁定</p>
+  <p>已綁定若想要解除或是重新綁定，請先點選解除綁定按鈕</p>
+  @if(!$user)
+  <div class="ui message">
+    <div class="header">
+      提醒 !
+    </div>
+    <p>有時綁定 Line Notify 後會造成帳號登出，請再由 Step 1 重新登入即可</p>
+  </div>
+  <button class="ui button disabled">請先登入</button>
+  @else
+    @if(!$user->line_notify_token)
+      <button class="ui button" onClick="window.location='{{ url("auth/notify_redirect") }}'">點我綁定</button>
+    @else
+      <button class="ui button" onClick="window.location='{{ url("auth/notify_revoke") }}'">解除綁定</button>
+    @endif
+  @endif
 </div>
 
-<div class="ui main text container">
+<div class="ui main text container" style="margin-bottom: 7em">
   <h1 class="ui header">Step 3. 發送 Notify 訊息</h1>
   <p>請點選下方按鈕發送</p>
-  <button class="ui button">發送測試訊息</button>
-  <button class="ui button">發送現在日期</button>
-  <button class="ui button">發送現在時間</button>
+  @if(!$user || !$user->line_notify_token)
+    <button class="ui button disabled">需要先登入與綁定</button>
+  @else
+    <livewire:notify-buttons />
+  @endif
 </div>

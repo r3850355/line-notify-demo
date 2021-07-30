@@ -35,7 +35,6 @@
   }
   .main.container {
     margin-top: 7em;
-    margin-bottom: -2em;
   }
   .wireframe {
     margin-top: 2em;
@@ -43,8 +42,10 @@
   </style>
 
   <title>Document</title>
+  @livewireStyles
 </head>
 <body>
   @yield('page')
+  @livewireScripts
 </body>
 </html>

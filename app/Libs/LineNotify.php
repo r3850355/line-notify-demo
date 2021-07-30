@@ -65,7 +65,6 @@
                     if ($res['access_token']) {
                         $user->line_notify_token = $res['access_token'];
                         $user->save();
-                        Self::push($res['access_token'], '綁定成功！');
                         return redirect()->to('/');
                     }
                 }

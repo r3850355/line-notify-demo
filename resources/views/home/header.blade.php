@@ -4,24 +4,13 @@
       <!-- <img class="logo" src="assets/images/logo.png"> -->
       LINE Notify Demo
     </a>
-    <!-- <a href="#" class="item">Home</a>
-    <div class="ui simple dropdown item">
-      Dropdown <i class="dropdown icon"></i>
-      <div class="menu">
-        <a class="item" href="#">Link Item</a>
-        <a class="item" href="#">Link Item</a>
-        <div class="divider"></div>
-        <div class="header">Header Item</div>
-        <div class="item">
-          <i class="dropdown icon"></i>
-          Sub Menu
-          <div class="menu">
-            <a class="item" href="#">Link Item</a>
-            <a class="item" href="#">Link Item</a>
-          </div>
-        </div>
-        <a class="item" href="#">Link Item</a>
-      </div>
-    </div> -->
+    <a href="https://github.com/r3850355/line-notify-demo" class="item">
+      <i class="github icon"></i>
+      GitHub
+    </a>
+    <a href="https://medium.com/@r3850355/%E7%AD%86%E8%A8%98-line-notify-c9cead119dc1" class="item">
+      <i class="medium m icon"></i>
+      Medium
+    </a>
   </div>
 </div>

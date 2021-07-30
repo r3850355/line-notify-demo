@@ -44,6 +44,21 @@ Route::get('/auth/notify_redirect', function () {
   return LineNotify::redirect();
 });
 
+Route::get('/auth/notify_callback', function () {
+  return redirect()->to('/');
+});
+
 Route::post('/auth/notify_callback', function (Request $request) {
   return LineNotify::regirest($request->all());
+});
+
+Route::get('/auth/notify_revoke', function () {
+  $token = Auth::user()->line_notify_token;
+  if ($token) {
+    LineNotify::revoke($token);
+    $user = User::find(Auth::user()->id);
+    $user->line_notify_token = null;
+    $user->save();
+  }
+  return redirect()->to('/');
 });

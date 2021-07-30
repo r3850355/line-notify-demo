@@ -13,7 +13,7 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     function getIndex () {
-      $user = Auth::user();
-      return view('home.index')->with(['user' => $user]);
+      $data['user'] = Auth::user();
+      return view('home.index', $data);
     }
 }
