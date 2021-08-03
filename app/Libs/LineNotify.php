@@ -65,7 +65,8 @@
                     if ($res['access_token']) {
                         $user->line_notify_token = $res['access_token'];
                         $user->save();
-                        return redirect()->to('/');
+                        Auth::login($user);
+                        return redirect('/');
                     }
                 }
             }

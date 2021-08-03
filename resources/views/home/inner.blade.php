@@ -13,12 +13,6 @@
   <p>若尚未綁定，請點選下方按鈕綁定</p>
   <p>已綁定若想要解除或是重新綁定，請先點選解除綁定按鈕</p>
   @if(!$user)
-  <div class="ui message">
-    <div class="header">
-      提醒 !
-    </div>
-    <p>有時綁定 Line Notify 後會造成帳號登出，請再由 Step 1 重新登入即可</p>
-  </div>
   <button class="ui button disabled">請先登入</button>
   @else
     @if(!$user->line_notify_token)
